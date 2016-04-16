@@ -5,7 +5,7 @@ public class Player : MonoBehaviour {
 
 	public float startSpeed;
     public float acceleration;
-    private Rigidbody myRigidbody;
+	private Rigidbody2D myRigidbody;
     private Vector3 currentVelocity;
     private AudioController audioController;
 
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        myRigidbody = this.GetComponent<Rigidbody>();
+        myRigidbody = this.GetComponent<Rigidbody2D>();
         currentVelocity = myRigidbody.velocity;
         currentVelocity.x = startSpeed;
         myRigidbody.velocity = currentVelocity;
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour {
         Debug.Log("speed up");
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "HumanObstacle" && playerState == Transformation.HUMAN)
             IncreaseSpeed();
@@ -76,6 +76,6 @@ public class Player : MonoBehaviour {
             DecreaseSpeed();
 
         if (col.tag.Contains("Obstacle"))
-            col.GetComponent<BoxCollider>().enabled = false;
+            col.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
