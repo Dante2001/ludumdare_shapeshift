@@ -9,6 +9,9 @@ public class Player : MonoBehaviour {
 	public GameObject particleFailTax;
 	public GameObject particleFailSheep;
 
+	public GameObject spTaxesDone;
+	public GameObject spVictimMauled;
+
 	public float startSpeed;
     public float acceleration;
     private Rigidbody2D myRigidbody;
@@ -142,7 +145,8 @@ public class Player : MonoBehaviour {
     {
 		if (col.tag == "HumanObstacle" && playerState == Transformation.HUMAN) {
 			SuccessfulHit ();
-			Instantiate (particleSuccessTax, transform.position, particleSuccessTax.transform.rotation);
+			Instantiate (particleSuccessTax, col.transform.position, particleSuccessTax.transform.rotation);
+			Instantiate (spTaxesDone, new Vector3(col.transform.position.x,col.transform.position.y+2.5f,col.transform.position.z), spTaxesDone.transform.rotation);
 
 		} else if (col.tag == "HumanObstacle") {
 			UnsuccessfulHit ();
@@ -151,6 +155,7 @@ public class Player : MonoBehaviour {
 		else if (col.tag == "WerewolfObstacle" && playerState == Transformation.WEREWOLF) {
 			SuccessfulHit ();
 			Instantiate (particleSuccessSheep, transform.position, particleSuccessSheep.transform.rotation);
+			Instantiate (spVictimMauled, new Vector3(col.transform.position.x,col.transform.position.y+2.5f,col.transform.position.z), spVictimMauled.transform.rotation);
 		} else if (col.tag == "WerewolfObstacle") {
 			UnsuccessfulHit ();
 			Instantiate (particleFailTax, transform.position, particleFailTax.transform.rotation);
