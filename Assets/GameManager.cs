@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject goRain;
 	private GameObject goPlayer;
 
+	public bool isRaining = false;
+	public float rainDuration = 15f;
+	public float rainChance = .001f;
+	private float rainStart = 0f;
 
 	ColorCorrectionCurves mColorCorrectionCurves;
 
@@ -32,6 +36,19 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 	
 		float nightAlpha = Mathf.Abs ((timeOfDay - 12f) / 12f);
+
+		if (!isRaining) {
+			if (Random.Range (0f, 1000f) <= rainChance) {
+				rainStart = Time.time;
+				isRaining = true;
+				goRain.SetActive (true);
+			}
+		} else {
+			if (rainStart + rainDuration < Time.time) {
+				isRaining = false;
+				goRain.SetActive (false);
+			}
+		}
 
 		if (nightAlpha > .6f) {
 			//its pretty dark, make fireflies!
