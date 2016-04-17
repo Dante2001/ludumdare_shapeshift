@@ -4,6 +4,11 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+	public GameObject particleSuccessTax;
+	public GameObject particleSuccessSheep;
+	public GameObject particleFailTax;
+	public GameObject particleFailSheep;
+
 	public float startSpeed;
     public float acceleration;
     private Rigidbody2D myRigidbody;
@@ -135,15 +140,21 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "HumanObstacle" && playerState == Transformation.HUMAN)
-            SuccessfulHit();
-        else if (col.tag == "HumanObstacle")
-            UnsuccessfulHit();
-        else if (col.tag == "WerewolfObstacle" && playerState == Transformation.WEREWOLF)
-            SuccessfulHit();
-        else if (col.tag == "WerewolfObstacle")
-            UnsuccessfulHit();
+		if (col.tag == "HumanObstacle" && playerState == Transformation.HUMAN) {
+			SuccessfulHit ();
+			Instantiate (particleSuccessTax, transform.position, particleSuccessTax.transform.rotation);
 
+		} else if (col.tag == "HumanObstacle") {
+			UnsuccessfulHit ();
+			Instantiate (particleFailSheep, transform.position, particleFailSheep.transform.rotation);
+		}
+		else if (col.tag == "WerewolfObstacle" && playerState == Transformation.WEREWOLF) {
+			SuccessfulHit ();
+			Instantiate (particleSuccessSheep, transform.position, particleSuccessSheep.transform.rotation);
+		} else if (col.tag == "WerewolfObstacle") {
+			UnsuccessfulHit ();
+			Instantiate (particleFailTax, transform.position, particleFailTax.transform.rotation);
+		}
         if (col.tag.Contains("Obstacle"))
             col.GetComponent<BoxCollider2D>().enabled = false;
     }
