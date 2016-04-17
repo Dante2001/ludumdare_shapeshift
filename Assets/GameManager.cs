@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
 	public SpriteRenderer day;
 	public SpriteRenderer night;
 	public Text daysSurvivedText;
-	float timeOfDay = 0;
+	float timeOfDay = 8;
 	int daysLived = 0;
 
 	public void goBack() {
