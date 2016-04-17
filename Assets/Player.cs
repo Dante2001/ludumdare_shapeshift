@@ -12,6 +12,14 @@ public class Player : MonoBehaviour {
     private AudioController audioController;
     private MeterController meterController;
 
+    private GameObject fido;
+    private GameObject frida;
+
+    private Animator fidoAnimator;
+    private Animator fridaAnimator;
+    //private Animator transformationAnimator;
+    private Animator currentAnimator;
+
     private enum Transformation
     {
         HUMAN,
@@ -29,6 +37,12 @@ public class Player : MonoBehaviour {
         onSlowDown = false;
         audioController = GameObject.Find("AudioController").GetComponent<AudioController>();
         meterController = GameObject.Find("MeterController").GetComponent<MeterController>();
+        fido = GameObject.Find("Fido");
+        frida = GameObject.Find("Frida");
+        fidoAnimator = fido.GetComponent<Animator>();
+        fridaAnimator = frida.GetComponent<Animator>();
+        currentAnimator = fridaAnimator;
+        fido.SetActive(false);
         audioController.PlayAudio();
 	}
 	
@@ -40,13 +54,21 @@ public class Player : MonoBehaviour {
             if (playerState == Transformation.HUMAN)
             {
                 playerState = Transformation.WEREWOLF;
-                this.GetComponent<SpriteRenderer>().color = Color.red;
+                fido.SetActive(true);
+                currentAnimator = fidoAnimator;
+                currentAnimator.SetFloat("RunMultiplier", meterController.SanityAudioSpeedMultiplier());
+                frida.SetActive(false);
+                //this.GetComponent<SpriteRenderer>().color = Color.red;
                 audioController.SwapAudio();
             }
             else // playerState == Transformation.WEREWOLF
             {
                 playerState = Transformation.HUMAN;
-                this.GetComponent<SpriteRenderer>().color = Color.white;
+                frida.SetActive(true);
+                currentAnimator = fridaAnimator;
+                currentAnimator.SetFloat("RunMultiplier", meterController.SanityAudioSpeedMultiplier());
+                fido.SetActive(false);
+                //this.GetComponent<SpriteRenderer>().color = Color.white;
                 audioController.SwapAudio();
             }
         }
@@ -58,6 +80,7 @@ public class Player : MonoBehaviour {
         if (!onSlowDown)
         {
             currentVelocity.x = startSpeed * meterController.SanityPlayerSpeedMultiplier();
+            currentAnimator.SetFloat("RunMultiplier", meterController.SanityAudioSpeedMultiplier());
             myRigidbody.velocity = currentVelocity;
         }
         audioController.SetSpeedMultiplier(meterController.SanityAudioSpeedMultiplier());
@@ -91,7 +114,8 @@ public class Player : MonoBehaviour {
             meterController.SanityUp();
         else // playerState == Tranformation.WEREWOLF
             meterController.FullnessUp();
-
+        currentAnimator.SetTrigger("ToAction");
+        Debug.Log("success");
         //currentVelocity.x += acceleration;
         //set velocity to 0.4 for a second
         myRigidbody.velocity = Vector3.right * 0.4f;
@@ -131,6 +155,7 @@ public class Player : MonoBehaviour {
         // wait for 1 second then reset the velocity
         onSlowDown = true;
         yield return new WaitForSeconds(1.0f);
+        currentAnimator.SetTrigger("ToRun");
         onSlowDown = false;
         myRigidbody.velocity = currentVelocity;
     }

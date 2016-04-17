@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 	
 		float nightAlpha = Mathf.Abs ((timeOfDay - 12f) / 12f);
 
-		Debug.Log (nightAlpha);
+		//Debug.Log (nightAlpha);
 
 		mColorCorrectionCurves.redChannel = AnimationCurve.Linear (0, -nightAlpha * .4f, 1, 1f - ( nightAlpha * .4f));
 		mColorCorrectionCurves.blueChannel = AnimationCurve.Linear(0, 0, 1, 1f);
