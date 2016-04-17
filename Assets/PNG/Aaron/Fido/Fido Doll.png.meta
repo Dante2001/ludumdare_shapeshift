@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: 4097c2509e65d69408f7d056fccf25c7
+timeCreated: 1460833175
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Fido Doll_0
+    21300002: Fido Doll_1
+    21300004: Fido Doll_2
+    21300006: Fido Doll_3
+    21300008: Fido Doll_4
+    21300010: Fido Doll_5
+    21300012: Fido Doll_6
+    21300014: Fido Doll_7
+    21300016: Fido Doll_8
+    21300018: Fido Doll_9
+    21300020: Fido Doll_10
+    21300022: Fido Doll_11
+    21300024: Fido Doll_12
+    21300026: Fido Doll_13
+    21300028: Fido Doll_14
+    21300030: Fido Doll_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Fido Doll_0
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 2480
+        width: 47
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Fido Doll_1
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 2329
+        width: 266
+        height: 220
+      alignment: 9
+      pivot: {x: 0.4553755, y: 0.12892179}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48.303833, y: 154.00989}
+        - {x: -54.303833, y: 119.00989}
+        - {x: -47.303833, y: 112.00989}
+        - {x: -47.303833, y: 110.00989}
+        - {x: -47.303833, y: 112.00989}
+        - {x: -52.303833, y: 116.00989}
+        - {x: -82.30383, y: 128.00989}
+        - {x: -97.30383, y: 123.00989}
+        - {x: -97.30383, y: 92.00989}
+        - {x: -73.30383, y: 64.00989}
+        - {x: -49.303833, y: 13.009888}
+        - {x: -19.303833, y: -22.990112}
+        - {x: 57.696167, y: -22.990112}
+        - {x: 116.69617, y: 23.009888}
+        - {x: 116.69617, y: 78.00989}
+        - {x: -19.303833, y: 154.00989}
+    - name: Fido Doll_2
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 2275
+        width: 76
+        height: 60
+      alignment: 9
+      pivot: {x: 0.42190874, y: -0.24966227}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.552063, y: 59.983765}
+        - {x: -25.552063, y: 44.983765}
+        - {x: -25.552063, y: 26.983765}
+        - {x: -12.552063, y: 11.983765}
+        - {x: 35.447937, y: 11.983765}
+        - {x: 35.447937, y: 59.983765}
+    - name: Fido Doll_3
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 1890
+        width: 230
+        height: 386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 92, y: -38.5}
+        - {x: 85, y: 6.5}
+        - {x: 56, y: 133.5}
+        - {x: 40, y: 149.5}
+        - {x: 29, y: 154.5}
+        - {x: -31, y: 154.5}
+        - {x: -60, y: 125.5}
+        - {x: -68, y: 67.5}
+        - {x: -65, y: 13.5}
+        - {x: -92, y: -42.5}
+        - {x: -92, y: -109.5}
+        - {x: -53, y: -149.5}
+        - {x: -27, y: -154.5}
+        - {x: 18, y: -154.5}
+        - {x: 56, y: -140.5}
+        - {x: 82, y: -118.5}
+        - {x: 92, y: -83.5}
+    - name: Fido Doll_4
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 2027
+        width: 69
+        height: 223
+      alignment: 9
+      pivot: {x: 0.6897963, y: 0.8965402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.323181, y: 19.357178}
+        - {x: -17.676819, y: 19.357178}
+        - {x: -36.67682, y: 12.357178}
+        - {x: -37.67682, y: 4.3571777}
+        - {x: -37.67682, y: -156.64282}
+        - {x: -36.67682, y: -159.64282}
+        - {x: -14.676819, y: -159.64282}
+        - {x: 3.3231812, y: -147.64282}
+        - {x: 18.323181, y: -80.64282}
+        - {x: 18.323181, y: 7.3571777}
+    - name: Fido Doll_5
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 2045
+        width: 111
+        height: 204
+      alignment: 9
+      pivot: {x: 0.14387581, y: 0.8977458}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.176025, y: 17.08789}
+        - {x: -13.176025, y: 15.087891}
+        - {x: -13.176025, y: -19.91211}
+        - {x: 33.823975, y: -113.91211}
+        - {x: 58.823975, y: -146.91211}
+        - {x: 75.823975, y: -146.91211}
+        - {x: 76.823975, y: -144.91211}
+        - {x: 76.823975, y: -79.91211}
+        - {x: 28.823975, y: 17.08789}
+    - name: Fido Doll_6
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 1749
+        width: 146
+        height: 214
+      alignment: 9
+      pivot: {x: 0.2246144, y: 0.9175107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.134949, y: -128.27771}
+        - {x: 26.865051, y: -157.27771}
+        - {x: 85.86505, y: -157.27771}
+        - {x: 90.86505, y: -155.27771}
+        - {x: 90.86505, y: -75.27771}
+        - {x: 56.86505, y: 14.72229}
+        - {x: -26.134949, y: 14.72229}
+        - {x: -26.134949, y: -56.27771}
+    - name: Fido Doll_7
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 1639
+        width: 188
+        height: 190
+      alignment: 9
+      pivot: {x: 0.2913104, y: 0.5799554}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43.913086, y: -88.453125}
+        - {x: -23.913086, y: -88.453125}
+        - {x: -24.913086, y: -85.453125}
+        - {x: -38.913086, y: -77.453125}
+        - {x: -43.913086, y: -75.453125}
+      - - {x: 46.086914, y: 64.546875}
+        - {x: -37.913086, y: 64.546875}
+        - {x: -43.913086, y: 49.546875}
+        - {x: -43.913086, y: -49.453125}
+        - {x: -35.913086, y: -87.453125}
+        - {x: -31.913086, y: -88.453125}
+        - {x: 98.086914, y: -88.453125}
+        - {x: 107.086914, y: -73.453125}
+        - {x: 107.086914, y: 2.546875}
+        - {x: 100.086914, y: 35.546875}
+    - name: Fido Doll_8
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 1688
+        width: 144
+        height: 145
+      alignment: 9
+      pivot: {x: 0.31386226, y: 0.6848582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.156982, y: -59.54358}
+        - {x: -25.156982, y: -79.54358}
+        - {x: 79.84302, y: -79.54358}
+        - {x: 79.84302, y: -6.543579}
+        - {x: 63.843018, y: 37.45642}
+        - {x: 2.8430176, y: 37.45642}
+        - {x: -36.156982, y: -0.5435791}
+    - name: Fido Doll_9
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 1746
+        width: 169
+        height: 196
+      alignment: 9
+      pivot: {x: 0.12992398, y: 0.93306124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 118.234375, y: -115.10388}
+        - {x: 118.234375, y: -97.10388}
+        - {x: 76.234375, y: -34.10388}
+        - {x: 16.234375, y: 11.896118}
+        - {x: -1.765625, y: 11.896118}
+        - {x: -17.765625, y: 6.896118}
+        - {x: -17.765625, y: -15.103882}
+        - {x: 26.234375, y: -129.10388}
+        - {x: 44.234375, y: -146.10388}
+        - {x: 61.234375, y: -146.10388}
+        - {x: 61.234375, y: -143.10388}
+        - {x: 116.234375, y: -118.10388}
+    - name: Fido Doll_10
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 1548
+        width: 167
+        height: 109
+      alignment: 9
+      pivot: {x: 0.82733554, y: 0.86291504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.532043, y: 12.753784}
+        - {x: -88.53204, y: -16.246216}
+        - {x: -110.53204, y: -43.246216}
+        - {x: -110.53204, y: -64.246216}
+        - {x: -101.53204, y: -75.246216}
+        - {x: -19.532043, y: -75.246216}
+        - {x: 23.467957, y: -33.246216}
+        - {x: 23.467957, y: 2.7537842}
+        - {x: 16.467957, y: 12.753784}
+    - name: Fido Doll_11
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 1576
+        width: 92
+        height: 54
+      alignment: 9
+      pivot: {x: 0.58915514, y: 0.85947675}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.838257, y: 2.27063}
+        - {x: -0.16174316, y: 7.27063}
+        - {x: -27.161743, y: 7.27063}
+        - {x: -43.161743, y: -14.72937}
+        - {x: -43.161743, y: -32.72937}
+        - {x: 4.838257, y: -32.72937}
+        - {x: 21.838257, y: -29.72937}
+        - {x: 30.838257, y: -14.72937}
+        - {x: 30.838257, y: -0.7293701}
+    - name: Fido Doll_12
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1399
+        width: 99
+        height: 71
+      alignment: 9
+      pivot: {x: 0.28092572, y: 0.8191709}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.7506714, y: 11.071167}
+        - {x: -22.249329, y: 3.071167}
+        - {x: -22.249329, y: -14.928833}
+        - {x: 6.7506714, y: -46.928833}
+        - {x: 21.750671, y: -46.928833}
+        - {x: 57.75067, y: -32.928833}
+        - {x: 57.75067, y: -21.928833}
+        - {x: 20.750671, y: 11.071167}
+    - name: Fido Doll_13
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1351
+        width: 97
+        height: 84
+      alignment: 9
+      pivot: {x: 0.2697238, y: 0.5280471}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.930603, y: 13.915283}
+        - {x: -20.930603, y: 2.9152832}
+        - {x: -20.930603, y: -20.084717}
+        - {x: -16.930603, y: -32.084717}
+        - {x: 50.069397, y: -32.084717}
+        - {x: 57.069397, y: -30.084717}
+        - {x: 57.069397, y: 6.915283}
+        - {x: 42.069397, y: 13.915283}
+    - name: Fido Doll_14
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 1378
+        width: 92
+        height: 50
+      alignment: 9
+      pivot: {x: 0.28387317, y: 0.8188818}
+      border: {x: 0, y: 0, z: 0, w: 1}
+      outline:
+      - - {x: 19.107056, y: 8.144775}
+        - {x: -20.892944, y: 8.144775}
+        - {x: -20.892944, y: -2.8552246}
+        - {x: -19.892944, y: -4.8552246}
+        - {x: -13.892944, y: -31.855225}
+        - {x: -6.8929443, y: -32.855225}
+        - {x: 53.107056, y: -32.855225}
+        - {x: 53.107056, y: -10.855225}
+        - {x: 51.107056, y: -5.8552246}
+    - name: Fido Doll_15
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1264
+        width: 101
+        height: 61
+      alignment: 9
+      pivot: {x: 0.27450228, y: 0.8274266}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.579712, y: 8.721619}
+        - {x: -22.579712, y: -40.27838}
+        - {x: 43.420288, y: -40.27838}
+        - {x: 59.420288, y: -28.278381}
+        - {x: 59.420288, y: 0.72161865}
+        - {x: 57.420288, y: 8.721619}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
