@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Player : MonoBehaviour {
 
 	public float startSpeed;
     public float acceleration;
+    public float taxPoints;
+    public float sheepPoints;
     private Rigidbody2D myRigidbody;
     private Vector3 currentVelocity;
+
+    private HeartBubbles sheepBubbles;
+    private HeartBubbles taxBubbles;
     private AudioController audioController;
 
     private enum Transformation
@@ -23,6 +29,8 @@ public class Player : MonoBehaviour {
         currentVelocity = myRigidbody.velocity;
         currentVelocity.x = startSpeed;
         myRigidbody.velocity = currentVelocity;
+        sheepBubbles = GameObject.Find("SheepPoints").GetComponent<HeartBubbles>();
+        taxBubbles = GameObject.Find("TaxPoints").GetComponent<HeartBubbles>();
         audioController = GameObject.Find("AudioController").GetComponent<AudioController>();
         audioController.PlayAudio();
 	}
@@ -45,37 +53,74 @@ public class Player : MonoBehaviour {
                 audioController.SwapAudio();
             }
         }
-
 	}
 
-    void DecreaseSpeed()
+    void UnsuccessfulHit()
     {
+        if (playerState == Transformation.HUMAN)
+        {
+            taxBubbles.LoseHeart();
+            taxPoints -= 1;
+        }
+        else // playerState == Transformation.WEREWOLF
+        {
+            sheepBubbles.LoseHeart();
+            sheepPoints -= 1;
+        }
+        CheckEndOfGame();
+
         currentVelocity.x -= acceleration;
-        myRigidbody.velocity = currentVelocity;
+        if (currentVelocity.x <= 1f)
+            currentVelocity.x = 1f;
         audioController.SpeedDown();
-        Debug.Log("speed down");
+        //set velocity to 0.4 for a second
+        myRigidbody.velocity = Vector3.right * 0.4f;
+        StartCoroutine("StartMoving");
+        //do failure animation
+        //Debug.Log("speed down");
     }
 
-    void IncreaseSpeed()
+    void SuccessfulHit()
     {
         currentVelocity.x += acceleration;
-        myRigidbody.velocity = currentVelocity;
         audioController.SpeedUp();
-        Debug.Log("speed up");
+        //set velocity to 0.4 for a second
+        myRigidbody.velocity = Vector3.right * 0.4f;
+        StartCoroutine("StartMoving");
+        //do success animation
+        //Debug.Log("speed up");
+    }
+
+    void CheckEndOfGame()
+    {
+        if (taxPoints <= 0 || sheepPoints <= 0)
+        {
+            //some animation?
+            //you lose screen
+            //back to main menu
+            SceneManager.LoadScene(0);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "HumanObstacle" && playerState == Transformation.HUMAN)
-            IncreaseSpeed();
+            SuccessfulHit();
         else if (col.tag == "HumanObstacle")
-            DecreaseSpeed();
+            UnsuccessfulHit();
         else if (col.tag == "WerewolfObstacle" && playerState == Transformation.WEREWOLF)
-            IncreaseSpeed();
+            SuccessfulHit();
         else if (col.tag == "WerewolfObstacle")
-            DecreaseSpeed();
+            UnsuccessfulHit();
 
         if (col.tag.Contains("Obstacle"))
             col.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    IEnumerator StartMoving()
+    {
+        // wait for 1 second then reset the velocity
+        yield return new WaitForSeconds(1.0f);
+        myRigidbody.velocity = currentVelocity;
     }
 }
