@@ -58,7 +58,6 @@ public class Player : MonoBehaviour {
                 currentAnimator = fidoAnimator;
                 currentAnimator.SetFloat("RunMultiplier", meterController.SanityAudioSpeedMultiplier());
                 frida.SetActive(false);
-                //this.GetComponent<SpriteRenderer>().color = Color.red;
                 audioController.SwapAudio();
             }
             else // playerState == Transformation.WEREWOLF
@@ -68,7 +67,6 @@ public class Player : MonoBehaviour {
                 currentAnimator = fridaAnimator;
                 currentAnimator.SetFloat("RunMultiplier", meterController.SanityAudioSpeedMultiplier());
                 fido.SetActive(false);
-                //this.GetComponent<SpriteRenderer>().color = Color.white;
                 audioController.SwapAudio();
             }
         }
@@ -88,14 +86,9 @@ public class Player : MonoBehaviour {
 
     void UnsuccessfulHit()
     {
-        if (playerState == Transformation.HUMAN)
-        {
+        // missed taxes and sanity goes down a bit
+        if (playerState == Transformation.WEREWOLF)
             meterController.SanityDrainFaster();
-        }
-        else // playerState == Transformation.WEREWOLF
-        {
-            meterController.SanityDrainFaster();
-        }
         CheckEndOfGame();
 
 		//REMOVED THE FOLLOWING CODE SO HE JUST KEEPS RUNNING INSTEAD OF STOPPING WHEN HITTING UNSUCCESFULLY
@@ -116,15 +109,17 @@ public class Player : MonoBehaviour {
         if (playerState == Transformation.HUMAN)
             meterController.SanityUp();
         else // playerState == Tranformation.WEREWOLF
+        {
             meterController.FullnessUp();
+            meterController.SanityDrainFaster();
+        }
         currentAnimator.SetTrigger("ToAction");
-        Debug.Log("success");
-        //currentVelocity.x += acceleration;
+
         //set velocity to 0.4 for a second
         myRigidbody.velocity = Vector3.right * 0.4f;
         StartCoroutine("StartMoving");
         //do success animation
-        //Debug.Log("speed up");
+
     }
 
     void CheckEndOfGame()

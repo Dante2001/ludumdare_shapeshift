@@ -21,6 +21,15 @@ public class AudioController : MonoBehaviour
         curPitch = 1f;
     }
 
+    void Update()
+    {
+        if (bgmMajor.time == 84 || bgmMinor.time == 84)
+        {
+            bgmMajor.time = 0;
+            bgmMinor.time = 0;
+        }
+    }
+
     public void PlayAudio()
     {
         if (!isStarted)
@@ -44,14 +53,14 @@ public class AudioController : MonoBehaviour
         }
         onMajor = !onMajor;
     }
-
+    // not being used anymore
     public void SpeedUp()
     {
         curPitch += speedModifier;
         bgmMajor.pitch = curPitch;
         bgmMinor.pitch = curPitch;
     }
-
+    // not being used anymore
     public void SpeedDown()
     {
         curPitch -= speedModifier;
@@ -63,7 +72,7 @@ public class AudioController : MonoBehaviour
     {
         curPitch = 1f * mult;
         //Debug.Log(curPitch);
-        curPitch = curPitch - (curPitch % 0.1f);
+        curPitch = curPitch - (curPitch % 0.2f);
         bgmMajor.pitch = curPitch;
         bgmMinor.pitch = curPitch;
     }

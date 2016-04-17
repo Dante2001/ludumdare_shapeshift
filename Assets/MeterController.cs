@@ -107,7 +107,7 @@ public class MeterController : MonoBehaviour {
 
     public float SanityAudioSpeedMultiplier()
     {
-        return 1f + (sanityMeter.maxValue - sanityMeter.value) / (sanityMeter.maxValue);
+        return 1f + (sanityMeter.maxValue - sanityMeter.value) / (sanityMeter.maxValue * 2);
     }
 
 }
