@@ -98,12 +98,15 @@ public class Player : MonoBehaviour {
         }
         CheckEndOfGame();
 
+		//REMOVED THE FOLLOWING CODE SO HE JUST KEEPS RUNNING INSTEAD OF STOPPING WHEN HITTING UNSUCCESFULLY
         //currentVelocity.x -= acceleration;
-        if (currentVelocity.x <= 1f)
+/*        if (currentVelocity.x <= 1f)
             currentVelocity.x = 1f;
         //set velocity to 0.4 for a second
         myRigidbody.velocity = Vector3.right * 0.4f;
-        StartCoroutine("StartMoving");
+        StartCoroutine("StartMoving"); 
+*/
+
         //do failure animation
         //Debug.Log("speed down");
     }
