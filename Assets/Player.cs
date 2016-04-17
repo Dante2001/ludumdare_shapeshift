@@ -6,14 +6,11 @@ public class Player : MonoBehaviour {
 
 	public float startSpeed;
     public float acceleration;
-    public float taxPoints;
-    public float sheepPoints;
     private Rigidbody2D myRigidbody;
     private Vector3 currentVelocity;
-
-    private HeartBubbles sheepBubbles;
-    private HeartBubbles taxBubbles;
+    private bool onSlowDown;
     private AudioController audioController;
+    private MeterController meterController;
 
     private enum Transformation
     {
@@ -29,9 +26,9 @@ public class Player : MonoBehaviour {
         currentVelocity = myRigidbody.velocity;
         currentVelocity.x = startSpeed;
         myRigidbody.velocity = currentVelocity;
-        sheepBubbles = GameObject.Find("SheepPoints").GetComponent<HeartBubbles>();
-        taxBubbles = GameObject.Find("TaxPoints").GetComponent<HeartBubbles>();
+        onSlowDown = false;
         audioController = GameObject.Find("AudioController").GetComponent<AudioController>();
+        meterController = GameObject.Find("MeterController").GetComponent<MeterController>();
         audioController.PlayAudio();
 	}
 	
@@ -53,26 +50,34 @@ public class Player : MonoBehaviour {
                 audioController.SwapAudio();
             }
         }
+        UpdateSpeeds();
 	}
+
+    void UpdateSpeeds()
+    {
+        if (!onSlowDown)
+        {
+            currentVelocity.x = startSpeed * meterController.SanityPlayerSpeedMultiplier();
+            myRigidbody.velocity = currentVelocity;
+        }
+        audioController.SetSpeedMultiplier(meterController.SanityAudioSpeedMultiplier());
+    }
 
     void UnsuccessfulHit()
     {
         if (playerState == Transformation.HUMAN)
         {
-            taxBubbles.LoseHeart();
-            taxPoints -= 1;
+            meterController.SanityDrainFaster();
         }
         else // playerState == Transformation.WEREWOLF
         {
-            sheepBubbles.LoseHeart();
-            sheepPoints -= 1;
+            meterController.SanityDrainFaster();
         }
         CheckEndOfGame();
 
-        currentVelocity.x -= acceleration;
+        //currentVelocity.x -= acceleration;
         if (currentVelocity.x <= 1f)
             currentVelocity.x = 1f;
-        audioController.SpeedDown();
         //set velocity to 0.4 for a second
         myRigidbody.velocity = Vector3.right * 0.4f;
         StartCoroutine("StartMoving");
@@ -82,8 +87,12 @@ public class Player : MonoBehaviour {
 
     void SuccessfulHit()
     {
-        currentVelocity.x += acceleration;
-        audioController.SpeedUp();
+        if (playerState == Transformation.HUMAN)
+            meterController.SanityUp();
+        else // playerState == Tranformation.WEREWOLF
+            meterController.FullnessUp();
+
+        //currentVelocity.x += acceleration;
         //set velocity to 0.4 for a second
         myRigidbody.velocity = Vector3.right * 0.4f;
         StartCoroutine("StartMoving");
@@ -93,7 +102,7 @@ public class Player : MonoBehaviour {
 
     void CheckEndOfGame()
     {
-        if (taxPoints <= 0 || sheepPoints <= 0)
+        if (meterController.NoHealth())
         {
             //some animation?
             //you lose screen
@@ -120,7 +129,9 @@ public class Player : MonoBehaviour {
     IEnumerator StartMoving()
     {
         // wait for 1 second then reset the velocity
+        onSlowDown = true;
         yield return new WaitForSeconds(1.0f);
+        onSlowDown = false;
         myRigidbody.velocity = currentVelocity;
     }
 }

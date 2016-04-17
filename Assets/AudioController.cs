@@ -16,8 +16,8 @@ public class AudioController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        onMajor = true;
-        bgmMinor.mute = true;
+        onMajor = false;
+        bgmMajor.mute = true;
         curPitch = 1f;
     }
 
@@ -55,6 +55,15 @@ public class AudioController : MonoBehaviour
     public void SpeedDown()
     {
         curPitch -= speedModifier;
+        bgmMajor.pitch = curPitch;
+        bgmMinor.pitch = curPitch;
+    }
+
+    public void SetSpeedMultiplier(float mult)
+    {
+        curPitch = 1f * mult;
+        //Debug.Log(curPitch);
+        curPitch = curPitch - (curPitch % 0.1f);
         bgmMajor.pitch = curPitch;
         bgmMinor.pitch = curPitch;
     }

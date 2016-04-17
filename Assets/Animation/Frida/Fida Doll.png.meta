@@ -1,0 +1,486 @@
+fileFormatVersion: 2
+guid: b5bee1d17372a7a41b1da52adfcbda45
+timeCreated: 1460857110
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Fida Doll_0
+    21300002: Fida Doll_1
+    21300004: Fida Doll_2
+    21300006: Fida Doll_3
+    21300008: Fida Doll_4
+    21300010: Fida Doll_5
+    21300012: Fida Doll_6
+    21300014: Fida Doll_7
+    21300016: Fida Doll_8
+    21300018: Fida Doll_9
+    21300020: Fida Doll_10
+    21300022: Fida Doll_11
+    21300024: Fida Doll_12
+    21300026: Fida Doll_13
+    21300028: Fida Doll_14
+    21300030: Fida Doll_15
+    21300032: Fida Doll_16
+    21300034: Fida Doll_17
+    21300036: Fida Doll_18
+    21300038: Fida Doll_19
+    21300040: Fida Doll_20
+    21300042: Fida Doll_21
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 90.1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Fida Doll_0
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 1985
+        width: 172
+        height: 188
+      alignment: 9
+      pivot: {x: 0.6563096, y: 0.29979235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.491806, y: 105.611206}
+        - {x: -43.508194, y: 105.611206}
+        - {x: -90.508194, y: 65.611206}
+        - {x: -90.508194, y: -45.388794}
+        - {x: -19.508194, y: -45.388794}
+        - {x: 21.491806, y: -8.388794}
+        - {x: 47.491806, y: 30.611206}
+        - {x: 47.491806, y: 86.611206}
+    - name: Fida Doll_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1435
+        width: 83
+        height: 39
+      alignment: 9
+      pivot: {x: 0.87944144, y: 0.45858687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Fida Doll_2
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1406
+        width: 118
+        height: 80
+      alignment: 9
+      pivot: {x: 0.13303983, y: 0.16404419}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 73.341064, y: 54.80127}
+        - {x: 62.341064, y: 54.80127}
+        - {x: -12.658936, y: 9.80127}
+        - {x: -12.658936, y: -3.1987305}
+        - {x: -6.6589355, y: -10.19873}
+        - {x: 15.341064, y: -10.19873}
+        - {x: 82.341064, y: 29.80127}
+        - {x: 82.341064, y: 43.80127}
+        - {x: 81.341064, y: 47.80127}
+    - name: Fida Doll_3
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1419
+        width: 62
+        height: 68
+      alignment: 9
+      pivot: {x: 0.33141893, y: 0.25846413}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.361603, y: 40.8396}
+        - {x: -15.638397, y: 24.8396}
+        - {x: -16.638397, y: 16.8396}
+        - {x: -16.638397, y: 1.8395996}
+        - {x: -7.638397, y: -14.1604}
+        - {x: 28.361603, y: -14.1604}
+        - {x: 33.361603, y: -2.1604004}
+        - {x: 33.361603, y: 40.8396}
+    - name: Fida Doll_4
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1358
+        width: 103
+        height: 72
+      alignment: 9
+      pivot: {x: 0.8684845, y: 0.8364699}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.536873, y: 8.019409}
+        - {x: 9.536873, y: 10.019409}
+        - {x: -24.463127, y: 10.019409}
+        - {x: -56.463127, y: -3.9805908}
+        - {x: -71.46313, y: -30.98059}
+        - {x: -71.46313, y: -47.98059}
+        - {x: -57.463127, y: -47.98059}
+        - {x: -20.463127, y: -36.98059}
+        - {x: 11.536873, y: -21.98059}
+        - {x: 11.536873, y: 3.0194092}
+    - name: Fida Doll_5
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1335
+        width: 98
+        height: 42
+      alignment: 9
+      pivot: {x: 0.088622734, y: 0.6422061}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.8480225, y: 12.221924}
+        - {x: -6.8480225, y: -16.778076}
+        - {x: -3.8480225, y: -21.778076}
+        - {x: 72.15198, y: -21.778076}
+        - {x: 72.15198, y: 1.2219238}
+        - {x: 57.151978, y: 12.221924}
+    - name: Fida Doll_6
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1306
+        width: 87
+        height: 70
+      alignment: 9
+      pivot: {x: 0.10526004, y: 0.47866908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 62.67389, y: 28.494629}
+        - {x: 57.67389, y: 30.494629}
+        - {x: 2.6738892, y: 30.494629}
+        - {x: -7.326111, y: 24.494629}
+        - {x: -7.326111, y: -22.505371}
+        - {x: -0.32611084, y: -26.505371}
+        - {x: 36.67389, y: -26.505371}
+        - {x: 59.67389, y: 0.4946289}
+        - {x: 62.67389, y: 7.494629}
+    - name: Fida Doll_7
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1220
+        width: 67
+        height: 61
+      alignment: 9
+      pivot: {x: 0.8374749, y: 0.4470475}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.888653, y: 27.084106}
+        - {x: -44.888653, y: 12.084106}
+        - {x: -44.888653, y: -17.915894}
+        - {x: -34.888653, y: -21.915894}
+        - {x: 9.111347, y: -21.915894}
+        - {x: 9.111347, y: 18.084106}
+        - {x: 6.111347, y: 27.084106}
+    - name: Fida Doll_8
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1110
+        width: 141
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.699997, y: 70.5}
+        - {x: -56.300003, y: 49.5}
+        - {x: -56.300003, y: -63.5}
+        - {x: -48.300003, y: -70.5}
+        - {x: 39.699997, y: -70.5}
+        - {x: 56.699997, y: -60.5}
+        - {x: 56.699997, y: 42.5}
+        - {x: 50.699997, y: 70.5}
+    - name: Fida Doll_9
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1185
+        width: 65
+        height: 111
+      alignment: 9
+      pivot: {x: 0.28815025, y: 0.8721693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.9838257, y: 11.451416}
+        - {x: -12.983826, y: 9.451416}
+        - {x: -14.983826, y: 5.451416}
+        - {x: -14.983826, y: -21.548584}
+        - {x: 4.0161743, y: -77.548584}
+        - {x: 17.016174, y: -77.548584}
+        - {x: 37.016174, y: -60.548584}
+        - {x: 37.016174, y: -31.548584}
+        - {x: 24.016174, y: -6.548584}
+        - {x: 11.016174, y: 11.451416}
+    - name: Fida Doll_10
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 1245
+        width: 64
+        height: 65
+      alignment: 9
+      pivot: {x: 0.2900257, y: 0.52297175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.0493164, y: 24.805481}
+        - {x: -15.049316, y: 19.805481}
+        - {x: -15.049316, y: -15.194519}
+        - {x: -4.0493164, y: -27.194519}
+        - {x: 35.950684, y: -27.194519}
+        - {x: 36.950684, y: -23.194519}
+        - {x: 36.950684, y: 10.805481}
+        - {x: 28.950684, y: 24.805481}
+    - name: Fida Doll_11
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1090
+        width: 56
+        height: 74
+      alignment: 9
+      pivot: {x: 0.7460052, y: 0.90336156}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.321033, y: 6.1209717}
+        - {x: -33.321033, y: -13.879028}
+        - {x: -33.321033, y: -52.87903}
+        - {x: -32.321033, y: -53.87903}
+        - {x: -2.3210335, y: -53.87903}
+        - {x: 7.6789665, y: -50.87903}
+        - {x: 11.6789665, y: -28.879028}
+        - {x: 11.6789665, y: 4.1209717}
+        - {x: 9.6789665, y: 6.1209717}
+    - name: Fida Doll_12
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 1134
+        width: 74
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8266355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.399994, y: 12.9435425}
+        - {x: -29.399994, y: -21.056458}
+        - {x: -29.399994, y: -47.056458}
+        - {x: 0.6000061, y: -59.056458}
+        - {x: 30.600006, y: -59.056458}
+        - {x: 30.600006, y: 5.9435425}
+        - {x: 21.600006, y: 12.9435425}
+    - name: Fida Doll_13
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 920
+        width: 102
+        height: 119
+      alignment: 9
+      pivot: {x: 0.7987151, y: 0.88406295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.175156, y: 11.437195}
+        - {x: -59.175156, y: -1.5628052}
+        - {x: -65.175156, y: -26.562805}
+        - {x: -65.175156, y: -76.562805}
+        - {x: -44.175156, y: -84.562805}
+        - {x: -6.1751556, y: -84.562805}
+        - {x: 16.824844, y: -52.562805}
+        - {x: 16.824844, y: -1.5628052}
+        - {x: 11.824844, y: 11.437195}
+    - name: Fida Doll_14
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1005
+        width: 58
+        height: 70
+      alignment: 9
+      pivot: {x: 0.50000024, y: 0.89343613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.300018, y: 5.9675903}
+        - {x: -23.300018, y: -50.03241}
+        - {x: 23.699982, y: -50.03241}
+        - {x: 23.699982, y: 0.96759033}
+        - {x: 20.699982, y: 5.9675903}
+    - name: Fida Doll_15
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 1005
+        width: 83
+        height: 91
+      alignment: 9
+      pivot: {x: 0.4631322, y: 0.81945664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.8519745, y: 13.243591}
+        - {x: -30.851974, y: 0.24359131}
+        - {x: -30.851974, y: -41.75641}
+        - {x: -29.851974, y: -47.75641}
+        - {x: -21.851974, y: -59.75641}
+        - {x: 29.148026, y: -59.75641}
+        - {x: 36.148026, y: -31.756409}
+        - {x: 36.148026, y: 13.243591}
+    - name: Fida Doll_16
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 1032
+        width: 99
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5154548, y: 0.5493558}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.824036, y: 34.92798}
+        - {x: -40.824036, y: 20.927979}
+        - {x: -40.824036, y: -28.072021}
+        - {x: -10.824036, y: -41.07202}
+        - {x: 28.175964, y: -41.07202}
+        - {x: 39.175964, y: -23.072021}
+        - {x: 39.175964, y: 13.9279785}
+        - {x: 32.175964, y: 34.92798}
+    - name: Fida Doll_17
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 795
+        width: 86
+        height: 100
+      alignment: 9
+      pivot: {x: 0.47638074, y: 0.5000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.125004, y: 39.99994}
+        - {x: -32.874996, y: 32.99994}
+        - {x: -32.874996, y: -40.00006}
+        - {x: 23.125004, y: -40.00006}
+        - {x: 29.125004, y: -35.00006}
+        - {x: 36.125004, y: 8.999939}
+        - {x: 36.125004, y: 39.99994}
+    - name: Fida Doll_18
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 876
+        width: 70
+        height: 90
+      alignment: 9
+      pivot: {x: 0.48130167, y: 0.9072157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.347107, y: 7.9804688}
+        - {x: -25.652893, y: 7.9804688}
+        - {x: -26.652893, y: 6.9804688}
+        - {x: -26.652893, y: -21.019531}
+        - {x: -12.652893, y: -65.01953}
+        - {x: 26.347107, y: -65.01953}
+        - {x: 30.347107, y: -60.01953}
+        - {x: 30.347107, y: -7.0195312}
+        - {x: 22.347107, y: 6.9804688}
+    - name: Fida Doll_19
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 879
+        width: 57
+        height: 67
+      alignment: 9
+      pivot: {x: 0.4540732, y: 0.8907188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.70575, y: 6.2574463}
+        - {x: -20.70575, y: -25.742554}
+        - {x: -17.70575, y: -36.742554}
+        - {x: -9.7057495, y: -47.742554}
+        - {x: 25.29425, y: -47.742554}
+        - {x: 25.29425, y: 6.2574463}
+    - name: Fida Doll_20
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 744
+        width: 96
+        height: 69
+      alignment: 9
+      pivot: {x: 0.6908827, y: 0.8604241}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.15979, y: 8.304565}
+        - {x: -53.15979, y: -25.695435}
+        - {x: -53.15979, y: -47.695435}
+        - {x: 5.84021, y: -47.695435}
+        - {x: 23.84021, y: -33.695435}
+        - {x: 23.84021, y: 8.304565}
+    - name: Fida Doll_21
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 734
+        width: 108
+        height: 52
+      alignment: 9
+      pivot: {x: 0.7302715, y: 0.7768848}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.19548, y: 9.68158}
+        - {x: -55.19548, y: 0.6815796}
+        - {x: -63.19548, y: -14.31842}
+        - {x: -63.19548, y: -32.31842}
+        - {x: -4.1954803, y: -32.31842}
+        - {x: 23.80452, y: -27.31842}
+        - {x: 23.80452, y: -4.3184204}
+        - {x: 18.80452, y: 9.68158}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
