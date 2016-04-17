@@ -5,12 +5,17 @@ using UnityStandardAssets.ImageEffects;
 
 public class GameManager : MonoBehaviour {
 
+	public GameObject goFirefly;
+	public GameObject goRain;
+	private GameObject goPlayer;
+
+
 	ColorCorrectionCurves mColorCorrectionCurves;
 
 	public SpriteRenderer day;
 	public SpriteRenderer night;
 	public Text daysSurvivedText;
-	float timeOfDay = 12;
+	float timeOfDay = 0;
 	int daysLived = 0;
 
 	public void goBack() {
@@ -19,7 +24,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		goPlayer = GameObject.Find ("Player");
 		mColorCorrectionCurves = GetComponent<ColorCorrectionCurves> ();
 	}
 	
@@ -28,9 +33,16 @@ public class GameManager : MonoBehaviour {
 	
 		float nightAlpha = Mathf.Abs ((timeOfDay - 12f) / 12f);
 
+		if (nightAlpha > .6f) {
+			//its pretty dark, make fireflies!
+			if (Random.Range (0, 100) > 98) {
+				Instantiate (goFirefly, new Vector3 (goPlayer.transform.position.x +20,goPlayer.transform.position.y + Random.Range(-.5f,2f),goPlayer.transform.position.z), goFirefly.transform.rotation);
+			}
+		}
+
 		Debug.Log (nightAlpha);
 
-		mColorCorrectionCurves.redChannel = AnimationCurve.Linear (0, -nightAlpha * .4f, 1, 1f - ( nightAlpha * .4f));
+		mColorCorrectionCurves.redChannel = AnimationCurve.Linear (0, -nightAlpha * .5f, 1, 1f - ( nightAlpha * .5f));
 		mColorCorrectionCurves.blueChannel = AnimationCurve.Linear(0, 0, 1, 1f);
 		mColorCorrectionCurves.greenChannel = AnimationCurve.Linear(0, -nightAlpha * .2f, 1, 1f- ( nightAlpha * .2f) );
 		mColorCorrectionCurves.UpdateParameters ();
