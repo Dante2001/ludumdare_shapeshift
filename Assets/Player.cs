@@ -64,7 +64,7 @@ public class Player : MonoBehaviour {
                 playerState = Transformation.WEREWOLF;
                 fido.SetActive(true);
                 currentAnimator = fidoAnimator;
-                currentAnimator.SetFloat("RunMultiplier", meterController.SanityAudioSpeedMultiplier());
+                currentAnimator.SetFloat("RunMultiplier", meterController.TimeAudioSpeedMultiplier());
                 frida.SetActive(false);
                 audioController.SwapAudio();
             }
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour {
                 playerState = Transformation.HUMAN;
                 frida.SetActive(true);
                 currentAnimator = fridaAnimator;
-                currentAnimator.SetFloat("RunMultiplier", meterController.SanityAudioSpeedMultiplier());
+                currentAnimator.SetFloat("RunMultiplier", meterController.TimeAudioSpeedMultiplier());
                 fido.SetActive(false);
                 audioController.SwapAudio();
             }
@@ -83,13 +83,11 @@ public class Player : MonoBehaviour {
 
     void UpdateSpeeds()
     {
-        if (!onSlowDown)
-        {
-            currentVelocity.x = startSpeed * meterController.SanityPlayerSpeedMultiplier();
-            currentAnimator.SetFloat("RunMultiplier", meterController.SanityAudioSpeedMultiplier());
-            myRigidbody.velocity = currentVelocity;
-        }
-        audioController.SetSpeedMultiplier(meterController.SanityAudioSpeedMultiplier());
+        currentVelocity.x = startSpeed * meterController.TimePlayerSpeedMultiplier();
+        //Run Multiplier also increases the speed of the "action" since we don't slow down now
+        currentAnimator.SetFloat("RunMultiplier", meterController.TimePlayerSpeedMultiplier());
+        myRigidbody.velocity = currentVelocity;
+        audioController.SetSpeedMultiplier(meterController.TimeAudioSpeedMultiplier());
     }
 
     void UnsuccessfulHit()
@@ -98,35 +96,22 @@ public class Player : MonoBehaviour {
         if (playerState == Transformation.WEREWOLF)
             meterController.SanityDrainFaster();
         CheckEndOfGame();
-
-		//REMOVED THE FOLLOWING CODE SO HE JUST KEEPS RUNNING INSTEAD OF STOPPING WHEN HITTING UNSUCCESFULLY
-        //currentVelocity.x -= acceleration;
-/*        if (currentVelocity.x <= 1f)
-            currentVelocity.x = 1f;
-        //set velocity to 0.4 for a second
-        myRigidbody.velocity = Vector3.right * 0.4f;
-        StartCoroutine("StartMoving"); 
-*/
-
-        //do failure animation
-        //Debug.Log("speed down");
     }
 
     void SuccessfulHit()
     {
-        //set velocity to 0.4 for some time
-        myRigidbody.velocity = Vector3.right * 0.4f;
+
         currentAnimator.SetTrigger("ToAction");
         if (playerState == Transformation.HUMAN)
         {
             meterController.SanityUp();
-            StartCoroutine(StartMoving(0.4f));
+            StartCoroutine(StartRuningAfter(0.6f / meterController.TimePlayerSpeedMultiplier()));
         }
         else // playerState == Tranformation.WEREWOLF
         {
             meterController.FullnessUp();
             meterController.SanityDrainFaster();
-            StartCoroutine(StartMoving());
+            StartCoroutine(StartRuningAfter(0.6f / meterController.TimePlayerSpeedMultiplier()));
         }
     }
 
@@ -164,13 +149,10 @@ public class Player : MonoBehaviour {
             col.GetComponent<BoxCollider2D>().enabled = false;
     }
 
-    IEnumerator StartMoving(float waitTime = 1.0f)
+    IEnumerator StartRuningAfter(float waitTime = 1.0f)
     {
-        // wait for 1 second then reset the velocity
-        onSlowDown = true;
+        // wait for for time then reset the velocity
         yield return new WaitForSeconds(waitTime);
         currentAnimator.SetTrigger("ToRun");
-        onSlowDown = false;
-        myRigidbody.velocity = currentVelocity;
     }
 }

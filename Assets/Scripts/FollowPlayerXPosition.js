@@ -7,5 +7,5 @@ function Start () {
 }
 
 function Update () {
-	this.transform.position.x = goPlayer.transform.position.x+6;
+	this.transform.position.x = goPlayer.transform.position.x+3;
 }

@@ -30,7 +30,7 @@ public class MoveFloor : MonoBehaviour {
 				if (temp == 0)
 					Instantiate (tHumanObs, new Vector3 (this.transform.position.x, -2.42f, 0f), Quaternion.identity);
 				else if (temp == 7)
-					Instantiate (tWerewolfObs, new Vector3 (this.transform.position.x, -2.88f, 0f), Quaternion.identity);
+					Instantiate (tWerewolfObs, new Vector3 (this.transform.position.x, -2.17f, 0f), Quaternion.identity);
 			}
 		}
 

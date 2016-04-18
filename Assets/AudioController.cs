@@ -71,8 +71,7 @@ public class AudioController : MonoBehaviour
     public void SetSpeedMultiplier(float mult)
     {
         curPitch = 1f * mult;
-        //Debug.Log(curPitch);
-        curPitch = curPitch - (curPitch % 0.2f);
+        //curPitch = curPitch - (curPitch % 0.2f);
         bgmMajor.pitch = curPitch;
         bgmMinor.pitch = curPitch;
     }

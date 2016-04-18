@@ -22,13 +22,15 @@ public class MeterController : MonoBehaviour {
     private bool noSanityHealthDrain = false;
     private bool noFullnessHealthDrain = false;
 
+    private float timePlayed = 0f;
+
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        timePlayed += Time.deltaTime;
         CheckHealth();
         DrainMeters();
 	}
@@ -100,14 +102,36 @@ public class MeterController : MonoBehaviour {
         return false;
     }
 
+    // no longer in use
     public float SanityPlayerSpeedMultiplier()
     {
         return 1f + (sanityMeter.maxValue - sanityMeter.value) / (sanityMeter.maxValue / 4f);
     }
 
+    // no longer in use
     public float SanityAudioSpeedMultiplier()
     {
         return 1f + (sanityMeter.maxValue - sanityMeter.value) / (sanityMeter.maxValue * 2);
     }
+
+    public float TimePlayerSpeedMultiplier()
+    {
+        // increase speed by 10% every 2 seconds
+        float temp = 1f + 0.1f * timePlayed / 2f;
+        // cap is 8 times player start speed
+        if (temp > 8f)
+            temp = 8f;
+        return temp;
+    }
+
+    public float TimeAudioSpeedMultiplier()
+    {
+        float temp = 1f + 0.02f * timePlayed / 2f;
+        // cap is 2 times audio speed
+        if (temp > 2f)
+            temp = 2f;
+        return temp;
+    }
+
 
 }
