@@ -23,7 +23,7 @@ public class AudioController : MonoBehaviour
 
     void Update()
     {
-        if (bgmMajor.time == 84 || bgmMinor.time == 84)
+        if (bgmMajor.time >= 84f || bgmMinor.time >= 84f)
         {
             bgmMajor.time = 0;
             bgmMinor.time = 0;

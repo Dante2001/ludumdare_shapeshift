@@ -114,20 +114,20 @@ public class Player : MonoBehaviour {
 
     void SuccessfulHit()
     {
+        //set velocity to 0.4 for some time
+        myRigidbody.velocity = Vector3.right * 0.4f;
+        currentAnimator.SetTrigger("ToAction");
         if (playerState == Transformation.HUMAN)
+        {
             meterController.SanityUp();
+            StartCoroutine(StartMoving(0.4f));
+        }
         else // playerState == Tranformation.WEREWOLF
         {
             meterController.FullnessUp();
             meterController.SanityDrainFaster();
+            StartCoroutine(StartMoving());
         }
-        currentAnimator.SetTrigger("ToAction");
-
-        //set velocity to 0.4 for a second
-        myRigidbody.velocity = Vector3.right * 0.4f;
-        StartCoroutine("StartMoving");
-        //do success animation
-
     }
 
     void CheckEndOfGame()
@@ -164,11 +164,11 @@ public class Player : MonoBehaviour {
             col.GetComponent<BoxCollider2D>().enabled = false;
     }
 
-    IEnumerator StartMoving()
+    IEnumerator StartMoving(float waitTime = 1.0f)
     {
         // wait for 1 second then reset the velocity
         onSlowDown = true;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(waitTime);
         currentAnimator.SetTrigger("ToRun");
         onSlowDown = false;
         myRigidbody.velocity = currentVelocity;

@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 
-		Debug.Log (nightAlpha);
+		//Debug.Log (nightAlpha);
 
 		mColorCorrectionCurves.redChannel = AnimationCurve.Linear (0, -nightAlpha * .5f, 1, 1f - ( nightAlpha * .5f));
 		mColorCorrectionCurves.blueChannel = AnimationCurve.Linear(0, 0, 1, 1f);
