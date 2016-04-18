@@ -93,9 +93,11 @@ public class Player : MonoBehaviour {
     void UnsuccessfulHit()
     {
         // missed taxes and sanity goes down a bit
-        if (playerState == Transformation.WEREWOLF)
-            meterController.SanityDrainFaster();
-        CheckEndOfGame();
+		if (playerState == Transformation.WEREWOLF)
+			meterController.SanityDrainFaster();
+		if (playerState == Transformation.HUMAN)
+			meterController.SanityDrainFaster();
+		CheckEndOfGame();
     }
 
     void SuccessfulHit()
@@ -110,7 +112,7 @@ public class Player : MonoBehaviour {
         else // playerState == Tranformation.WEREWOLF
         {
             meterController.FullnessUp();
-            meterController.SanityDrainFaster();
+            //meterController.SanityDrainFaster();
             StartCoroutine(StartRuningAfter(0.6f / meterController.TimePlayerSpeedMultiplier()));
         }
     }
@@ -135,15 +137,16 @@ public class Player : MonoBehaviour {
 
 		} else if (col.tag == "HumanObstacle") {
 			UnsuccessfulHit ();
-			Instantiate (particleFailSheep, transform.position, particleFailSheep.transform.rotation);
+//			Instantiate (particleFailSheep, transform.position, particleFailSheep.transform.rotation);
 		}
 		else if (col.tag == "WerewolfObstacle" && playerState == Transformation.WEREWOLF) {
 			SuccessfulHit ();
+			col.gameObject.GetComponent<Human> ().die ();
 			Instantiate (particleSuccessSheep, transform.position, particleSuccessSheep.transform.rotation);
 			Instantiate (spVictimMauled, new Vector3(col.transform.position.x,col.transform.position.y+2.5f,col.transform.position.z), spVictimMauled.transform.rotation);
 		} else if (col.tag == "WerewolfObstacle") {
 			UnsuccessfulHit ();
-			Instantiate (particleFailTax, transform.position, particleFailTax.transform.rotation);
+//			Instantiate (particleFailTax, transform.position, particleFailTax.transform.rotation);
 		}
         if (col.tag.Contains("Obstacle"))
             col.GetComponent<BoxCollider2D>().enabled = false;

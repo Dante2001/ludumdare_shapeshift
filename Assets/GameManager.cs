@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 	private float rainStart = 0f;
 
 	ColorCorrectionCurves mColorCorrectionCurves;
+	private MeterController meterController;
 
 	public SpriteRenderer day;
 	public SpriteRenderer night;
@@ -30,11 +31,14 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		goPlayer = GameObject.Find ("Player");
 		mColorCorrectionCurves = GetComponent<ColorCorrectionCurves> ();
+		meterController = GameObject.Find("MeterController").GetComponent<MeterController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+		mColorCorrectionCurves.saturation = meterController.healthMeter.value/100;
+
 		float nightAlpha = Mathf.Abs ((timeOfDay - 12f) / 12f);
 
 		if (!isRaining) {
