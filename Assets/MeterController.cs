@@ -47,7 +47,7 @@ public class MeterController : MonoBehaviour {
         float temp = Mathf.Floor(sanityMeter.value / 10);
         if (temp == 10)
             temp -= 1;
-        if (10 - temp != curImgIndex)
+        if (10 - temp != curImgIndex && temp > 0)
         {
             currentImage.enabled = false;
             currentImage = GameObject.Find("Image (" + (10 - temp).ToString() + ")").GetComponent<Image>();
