@@ -23,9 +23,15 @@ public class MeterController : MonoBehaviour {
     private bool noFullnessHealthDrain = false;
 
     private float timePlayed = 0f;
+    private Image currentImage;
+    private Image damageImage;
+    private float curImgIndex;
 
 	// Use this for initialization
 	void Start () {
+        currentImage = GameObject.Find("Image (1)").GetComponent<Image>();
+        curImgIndex = 1;
+        damageImage = GameObject.Find("DAMAGE").GetComponent<Image>();
 	}
 	
 	// Update is called once per frame
@@ -33,7 +39,27 @@ public class MeterController : MonoBehaviour {
         timePlayed += Time.deltaTime;
         CheckHealth();
         DrainMeters();
+        ChangeOverlay();
 	}
+
+    void ChangeOverlay()
+    {
+        float temp = Mathf.Floor(sanityMeter.value / 10);
+        if (temp == 10)
+            temp -= 1;
+        if (10 - temp != curImgIndex)
+        {
+            currentImage.enabled = false;
+            currentImage = GameObject.Find("Image (" + (10 - temp).ToString() + ")").GetComponent<Image>();
+            currentImage.enabled = true;
+            curImgIndex = temp;
+        }
+
+        if (sanityMeter.value <= 0 || fullnessMeter.value <= 0)
+            damageImage.enabled = true;
+        else
+            damageImage.enabled = false;
+    }
 
     void CheckHealth()
     {
@@ -41,11 +67,13 @@ public class MeterController : MonoBehaviour {
         {
             healthConstantDrain += healthNoSanityDrain;
             noSanityHealthDrain = true;
+            
         }
         else if (noSanityHealthDrain && sanityMeter.value > 0)
         {
             healthConstantDrain -= healthNoSanityDrain;
             noSanityHealthDrain = false;
+
         }
 
         if (!noFullnessHealthDrain && fullnessMeter.value <= 0)
@@ -133,5 +161,9 @@ public class MeterController : MonoBehaviour {
         return temp;
     }
 
+    public float[] GetMeterValues()
+    {
+        return new float [] {sanityMeter.value, fullnessMeter.value};
+    }
 
 }

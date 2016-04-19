@@ -60,10 +60,9 @@ public class AudioController : MonoBehaviour
         bgmMajor.pitch = curPitch;
         bgmMinor.pitch = curPitch;
     }
-    // not being used anymore
-    public void SpeedDown()
+    public void SpeedDown(float speed)
     {
-        curPitch -= speedModifier;
+        curPitch -= speed;
         bgmMajor.pitch = curPitch;
         bgmMinor.pitch = curPitch;
     }
@@ -74,5 +73,20 @@ public class AudioController : MonoBehaviour
         //curPitch = curPitch - (curPitch % 0.2f);
         bgmMajor.pitch = curPitch;
         bgmMinor.pitch = curPitch;
+    }
+
+    public void DeaccelerateOnGameover()
+    {
+        StartCoroutine(DeaccelerateOverTime(0.1f));
+    }
+
+    IEnumerator DeaccelerateOverTime(float acc)
+    {
+        while (true)
+        {
+            if (curPitch > 0.5f)
+                SpeedDown(acc);
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

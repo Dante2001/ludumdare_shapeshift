@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -27,6 +28,8 @@ public class Player : MonoBehaviour {
     private Animator fridaAnimator;
     //private Animator transformationAnimator;
     private Animator currentAnimator;
+
+    private bool isGameOver = false;
 
     private enum Transformation
     {
@@ -78,7 +81,8 @@ public class Player : MonoBehaviour {
                 audioController.SwapAudio();
             }
         }
-        UpdateSpeeds();
+        if (!isGameOver)
+            UpdateSpeeds();
 	}
 
     void UpdateSpeeds()
@@ -124,7 +128,9 @@ public class Player : MonoBehaviour {
             //some animation?
             //you lose screen
             //back to main menu
-            SceneManager.LoadScene(0);
+            isGameOver = true;
+            StartCoroutine(GameOver());
+            
         }
     }
 
@@ -150,6 +156,24 @@ public class Player : MonoBehaviour {
 		}
         if (col.tag.Contains("Obstacle"))
             col.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    IEnumerator GameOver()
+    {
+        audioController.DeaccelerateOnGameover();
+        //smoke explosion here
+        fido.SetActive(false);
+        frida.SetActive(false);
+        //display game over overlay
+        float[] temp = meterController.GetMeterValues();
+        if (temp[0] == 0 && temp[1] == 0)
+            GameObject.Find("Gameover both").GetComponent<Image>().enabled = true;
+        else if (temp[0] == 0)
+            GameObject.Find("Gameover sanity").GetComponent<Image>().enabled = true;
+        else
+            GameObject.Find("Gameover fullness").GetComponent<Image>().enabled = true;
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator StartRuningAfter(float waitTime = 1.0f)
