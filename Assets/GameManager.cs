@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject goFirefly;
 	public GameObject goRain;
 	private GameObject goPlayer;
+	public Image dayIndicator;
 
 	public bool isRaining = false;
 	public float rainDuration = 15f;
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour {
 		mColorCorrectionCurves.saturation = meterController.healthMeter.value/100;
 
 		float nightAlpha = Mathf.Abs ((timeOfDay - 12f) / 12f);
+
+		dayIndicator.color = new Color (1,1,1,nightAlpha);
 
 		if (!isRaining) {
 			if (Random.Range (0f, 1000f) <= rainChance) {
