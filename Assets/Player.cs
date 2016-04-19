@@ -60,32 +60,33 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-			GameObject instantiatedSmoke = (GameObject) Instantiate (goSmokeBomb, new Vector3(transform.position.x, transform.position.y-.4f, transform.position.z), goSmokeBomb.transform.rotation);
-			instantiatedSmoke.transform.SetParent (transform);
-            if (playerState == Transformation.HUMAN)
-            {
-                playerState = Transformation.WEREWOLF;
-                fido.SetActive(true);
-                currentAnimator = fidoAnimator;
-                currentAnimator.SetFloat("RunMultiplier", meterController.TimeAudioSpeedMultiplier());
-                frida.SetActive(false);
-                audioController.SwapAudio();
-            }
-            else // playerState == Transformation.WEREWOLF
-            {
-                playerState = Transformation.HUMAN;
-                frida.SetActive(true);
-                currentAnimator = fridaAnimator;
-                currentAnimator.SetFloat("RunMultiplier", meterController.TimeAudioSpeedMultiplier());
-                fido.SetActive(false);
-                audioController.SwapAudio();
-            }
-        }
         if (!isGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                GameObject instantiatedSmoke = (GameObject)Instantiate(goSmokeBomb, new Vector3(transform.position.x, transform.position.y - .4f, transform.position.z), goSmokeBomb.transform.rotation);
+                instantiatedSmoke.transform.SetParent(transform);
+                if (playerState == Transformation.HUMAN)
+                {
+                    playerState = Transformation.WEREWOLF;
+                    fido.SetActive(true);
+                    currentAnimator = fidoAnimator;
+                    currentAnimator.SetFloat("RunMultiplier", meterController.TimeAudioSpeedMultiplier());
+                    frida.SetActive(false);
+                    audioController.SwapAudio();
+                }
+                else // playerState == Transformation.WEREWOLF
+                {
+                    playerState = Transformation.HUMAN;
+                    frida.SetActive(true);
+                    currentAnimator = fridaAnimator;
+                    currentAnimator.SetFloat("RunMultiplier", meterController.TimeAudioSpeedMultiplier());
+                    fido.SetActive(false);
+                    audioController.SwapAudio();
+                }
+            }
             UpdateSpeeds();
+        }
 	}
 
     void UpdateSpeeds()
@@ -135,6 +136,7 @@ public class Player : MonoBehaviour {
             //you lose screen
             //back to main menu
             isGameOver = true;
+            this.transform.position += Vector3.up * 600;
             StartCoroutine(GameOver());
             
         }
@@ -168,16 +170,10 @@ public class Player : MonoBehaviour {
     {
         audioController.DeaccelerateOnGameover();
         //smoke explosion here
-        fido.SetActive(false);
-        frida.SetActive(false);
+
         //display game over overlay
         float[] temp = meterController.GetMeterValues();
-        if (temp[0] == 0 && temp[1] == 0)
-            GameObject.Find("Gameover both").GetComponent<Image>().enabled = true;
-        else if (temp[0] == 0)
-            GameObject.Find("Gameover sanity").GetComponent<Image>().enabled = true;
-        else
-            GameObject.Find("Gameover fullness").GetComponent<Image>().enabled = true;
+        GameObject.Find("Gameover both").GetComponent<Image>().enabled = true;
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(0);
     }
