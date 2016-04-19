@@ -30,6 +30,7 @@ public class Player : MonoBehaviour {
     //private Animator transformationAnimator;
     private Animator currentAnimator;
 
+    public GameObject gameoverScreen;
     private bool isGameOver = false;
 
     private enum Transformation
@@ -55,7 +56,7 @@ public class Player : MonoBehaviour {
         fridaAnimator = frida.GetComponent<Animator>();
         currentAnimator = fridaAnimator;
         fido.SetActive(false);
-        audioController.PlayAudio();
+        StartCoroutine(PlaySongsAfterHalfSecond());
 	}
 	
 	// Update is called once per frame
@@ -88,6 +89,13 @@ public class Player : MonoBehaviour {
             UpdateSpeeds();
         }
 	}
+
+    IEnumerator PlaySongsAfterHalfSecond()
+    {
+        // i lied it was one second
+        yield return new WaitForSeconds(1f);
+        audioController.PlayAudio();
+    }
 
     void UpdateSpeeds()
     {
@@ -174,7 +182,8 @@ public class Player : MonoBehaviour {
         //display game over overlay
         float[] temp = meterController.GetMeterValues();
         GameObject.Find("Gameover both").GetComponent<Image>().enabled = true;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }
 
