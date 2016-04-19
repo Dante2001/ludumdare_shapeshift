@@ -86,11 +86,14 @@ public class Player : MonoBehaviour {
 
     void UpdateSpeeds()
     {
-        currentVelocity.x = startSpeed * meterController.TimePlayerSpeedMultiplier();
-        //Run Multiplier also increases the speed of the "action" since we don't slow down now
-        currentAnimator.SetFloat("RunMultiplier", meterController.TimePlayerSpeedMultiplier());
+		if (currentVelocity.x < 20) {
+			currentVelocity.x = startSpeed * meterController.TimePlayerSpeedMultiplier ();
+			//Run Multiplier also increases the speed of the "action" since we don't slow down now
+			currentAnimator.SetFloat("RunMultiplier", meterController.TimePlayerSpeedMultiplier());
+			audioController.SetSpeedMultiplier(meterController.TimeAudioSpeedMultiplier());
+		}
+
         myRigidbody.velocity = currentVelocity;
-        audioController.SetSpeedMultiplier(meterController.TimeAudioSpeedMultiplier());
     }
 
     void UnsuccessfulHit()

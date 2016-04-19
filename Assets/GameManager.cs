@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour {
 			daysLived++;
 			daysSurvivedText.text = daysLived.ToString();
 		}
-		timeOfDay += 0.005f;
+		timeOfDay += 0.05f;
 		//timeOfDay += 0.1f;
 
 		night.color = new Color(1,1,1,nightAlpha );
