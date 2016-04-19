@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
 
 	public GameObject spTaxesDone;
 	public GameObject spVictimMauled;
+	public GameObject goSmokeBomb;
 
 	public float startSpeed;
     public float acceleration;
@@ -59,6 +60,8 @@ public class Player : MonoBehaviour {
 		
         if (Input.GetKeyDown(KeyCode.Space))
         {
+			GameObject instantiatedSmoke = (GameObject) Instantiate (goSmokeBomb, new Vector3(transform.position.x, transform.position.y-.4f, transform.position.z), goSmokeBomb.transform.rotation);
+			instantiatedSmoke.transform.SetParent (transform);
             if (playerState == Transformation.HUMAN)
             {
                 playerState = Transformation.WEREWOLF;
